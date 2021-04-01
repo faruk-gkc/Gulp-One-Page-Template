@@ -1,0 +1,35 @@
+.footer{
+    background-color:$dark-color;
+    padding: 80px 0;
+
+    &-copyright{
+        width: 100%;
+        margin-bottom: 30px;
+        p{
+            color: #fff;
+            text-align: center;
+        }
+    }
+    &-social{
+        width: 100%;
+        @include centerFlex;
+        ul{
+            display: flex;
+
+            li{
+                &:not(:last-child){
+                    margin-right: 15px;
+                }
+
+                a{
+                    color: $primary-color;
+                    @include transitionEffect(500ms);
+                    &:hover{
+                        color:rgba($primary-color,.6)
+                    }                   
+                }
+                
+            }
+        }
+    }
+}

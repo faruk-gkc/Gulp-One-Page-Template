@@ -1,0 +1,97 @@
+// HEADER CSS
+
+header{
+    background-color: cadetblue;
+
+}
+.header{
+    &-navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+
+        @media only screen and(max-width:992px){
+            flex-direction: column; 
+        }
+        &-logo{
+            h1{
+                text-align: center;
+            }
+            h3{
+                color: #fff;
+                text-align: center;
+            }   
+        }
+        &-menu{
+            ul{
+                display: flex;
+
+                li{
+                    &:not(:first-child){
+                        margin-left: 10px;
+                    }
+                    a{
+                        color: #fff;
+                        @include transitionEffect(500ms);
+                        
+                        &:hover{
+                            color:$primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transformTranslate(-50%,-50%);
+        @include centerFlex;
+        flex-direction: column;
+        color: #fff;
+        
+        h1{
+            @media only screen and(max-width:992px){
+                font-size: 40px;  
+            }
+            @media only screen and(max-width:576px){
+                font-size: 30px;  
+            }
+
+        }
+        h3{
+            @media only screen and(max-width:992px){
+                font-size: 20px;  
+            }
+            @media only screen and(max-width:576px){
+                font-size: 15px;  
+            }
+        }
+
+        }
+
+        .header-fixed{
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(#5f939a,.6);
+            color: #fff;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            box-sizing: border-box;
+            padding: 0 15px;
+            z-index: 10;
+            
+            a{  
+                &:hover{
+                    color:$dark-color;
+                }
+            }
+        }
+    }
+
+   
+

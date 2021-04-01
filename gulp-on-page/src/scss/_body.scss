@@ -1,0 +1,223 @@
+// ABOUT
+.page-title-light{
+    margin-bottom: 60px;
+    h2 {
+        width:100%;
+        text-align:center;
+        text-transform: uppercase;
+        color: #fff;
+        &::after{
+            content: "";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px auto 0 auto;
+        }
+    }
+}
+
+.page-title-dark{
+    margin-bottom: 60px;
+    h2 {
+        width:100%;
+        text-align:center;
+        text-transform: uppercase;
+        &::after{
+            content: "";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: $dark-color;
+            margin: 5px auto 0 auto;
+        }
+    }
+}
+
+// ABOUT START
+.about{
+    padding: 80px 0;
+
+    &-content{
+        display: flex;
+        align-items: center;
+
+        @media only screen and(max-width:992px){
+            flex-wrap: wrap;   
+        }
+
+        &-img{
+            width: 40%;
+
+            @media only screen and(max-width:992px){
+                width: 100%;    
+            }
+
+            img{
+                @include imageFit;
+            }
+        }
+        &-info{
+            width: 60%;
+            margin-left: 30px;
+            
+            @media only screen and(max-width:992px){
+                width: 100%;   
+                margin-left: 0;
+                margin-top: 30px;
+            }
+
+            h4{
+                margin-bottom: 30px;
+
+                @media only screen and(max-width:992px){
+                    text-align: center;
+                    color: $primary-color;
+                }
+            }
+            p{
+                text-align: justify;
+            }
+        }
+    }
+}
+
+//PORTFOLIO START
+.portfolio{
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &-item{
+        // width: 25%;
+        //height:400px;
+        flex-basis: 25%;
+        height: 350px;
+        position: relative;//overlay için position relative dedik.
+        overflow: hidden; //scale taşmaşını önlemek için.
+
+        @media only screen and(max-width:992px){
+            flex-basis: 50%;   
+        }
+
+        @media only screen and(max-width:576px){
+            flex-basis: 100%;   
+        }
+
+        img{
+            @include imageFit;
+            @include transitionEffect(800ms);
+        }
+
+        &:hover img{
+            transform: scale(1.1);
+        }
+
+        &:hover .portfolio-item-overlay{
+           right: 0;
+        }
+
+        &-overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            right: 100%;
+            top: 0;
+            color: #fff;
+            background-color: $dark-color;
+            @include centerFlex;
+            cursor: pointer;
+            opacity: .8;
+            @include transitionEffect(800ms);
+
+            i{
+                font-size: 1.5rem;
+                @include transitionEffect(300ms);
+                &:hover{
+                    font-size: 2.4rem;
+                }
+            }
+        }
+    }
+}
+
+//SERVICES START
+.services{
+
+    padding: 80px 0;
+    background-color: rgba($primary-color, .8);
+    &-content{
+        display: flex;
+
+        @media only screen and(max-width:768px){
+            flex-direction: column; 
+        }
+
+        &-item{
+            @include centerFlex;
+            flex-direction: column;
+            color: #fff;
+
+            @media only screen and(max-width:768px){
+                margin-top: 20px; 
+            }
+
+            &:not(:first-child){
+                margin-left: 10px;
+            }
+            i{
+                width: 70px;
+                height: 70px;
+                border: 2px solid #fff;
+                @include centerFlex;
+                margin-bottom: 40px;
+            }
+            h4{
+                margin-bottom: 40px;
+            }
+            p{
+                text-align: center;
+            }
+        }
+    }
+}
+
+//CONTACT START
+.contact{
+
+    padding: 80px 0;
+
+    &-content{
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and(max-width:768px){
+            flex-direction: column; 
+        }
+
+        &-item{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-basis: 33.33%;
+
+            @media only screen and(max-width:768px){
+                flex-basis: 100%;
+                margin-top: 20px; 
+            }
+
+            :not(:first-child){
+                margin-left: 10px;
+            }
+            i{
+                color: $primary-color;
+                margin-bottom: 40px;
+            }
+
+            p{
+                text-align: center;
+            }
+
+        }
+    }
+}
